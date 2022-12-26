@@ -1,13 +1,17 @@
 import React from 'react';
+import { BsPlusLg } from "react-icons/bs";
+import { FaPlus } from "react-icons/fa";
 import './CreateTodoButton.css';
 
 function CreateTodoButton(props) {
-  const onClickButton = () => { console.log('aqui hubo un click')};
+  const onClickButton = () => { props.setOpenModal(!props.openModal); };
   return (
     <button 
       className="CreateTodoButton"
       onClick={ onClickButton }
-    >+</button>
+    >
+      <FaPlus />
+    </button>
   );
 }
 

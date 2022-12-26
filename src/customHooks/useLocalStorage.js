@@ -12,7 +12,7 @@ function useLocalStorage(itemName, initialValue){
                 let parsedItem;
                 
                 if(!localStorageItem){
-                    localStorage.setItem(itemName, JSON.stringify(initialValue));
+                    localStorage.setItem(itemName, JSON.stringify({initialValue}));
                     parsedItem = initialValue;
                 } else {
                     parsedItem = JSON.parse(localStorageItem);
@@ -23,7 +23,7 @@ function useLocalStorage(itemName, initialValue){
             catch(error){
                 setError(true);
             }
-        },1000)
+        },3000)
     },[])
 
 
